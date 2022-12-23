@@ -1,4 +1,5 @@
 public class Player {
+    // I AM A SAVAGE CABBAGE
     String playerName;
     int playerLevel;
     int playerHp;
