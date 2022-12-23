@@ -7,7 +7,7 @@ public class Main {
     public static Scanner Input = new Scanner(System.in);
     public static boolean gameBeaten = false;
     public static Player something = new Player();
-    public int TurnsCompleted = 0;
+    public static int TurnsCompleted = 0;
 
     public static void input() {
 
@@ -144,10 +144,14 @@ public class Main {
             }
         }
         while (!(choice == 1 || choice == 2));
+        {
+
+        }
 
 
     }
 
+    //THIS IS A CHANGE ONLY SEEN ON NANO BRANCH
     public static void main(String[] args) {
         input();
 
@@ -159,14 +163,16 @@ public class Main {
 
 //            something.Battle(something, enemy);
 
-            System.out.print(enemy.toString());
+            System.out.println(enemy.toString() + "\n");
 
 
-            System.out.println(something.toString());
+            System.out.println(something.toString() + "\n");
 
+            TurnsCompleted++;
 
         }
 
+        System.out.println("Game Over" + "\n\n" + "Turns Completed: " + TurnsCompleted);
         // Player Bob = new Player("GIGABOB",  25,25,100);
 
 
