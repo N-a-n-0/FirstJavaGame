@@ -152,9 +152,10 @@ public class Main {
         input();
 
         while (something.playerHp > 0) {
+            enemy.RandomizeStats();
+
             Action(enemy);
 
-            enemy.RandomizeStats();
 
 //            something.Battle(something, enemy);
 
