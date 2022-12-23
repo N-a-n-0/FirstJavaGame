@@ -8,7 +8,7 @@ public class Enemy {
         enemyHp = 5;
         enemyAttack = 2;
     }
-
+//HELLO MY SAVAGES THIS IS A LEGENDARY CHANGE MADE BY NANO ON THE MAIN BRANCH IN THE ENEMY FILE
     public Enemy(String enemyType, int enemyHp, int enemyAttack) {
         this.enemyType = enemyType;
         this.enemyHp = enemyHp;
