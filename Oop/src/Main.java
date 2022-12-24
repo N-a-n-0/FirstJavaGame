@@ -7,7 +7,9 @@ public class Main {
     public static Scanner Input = new Scanner(System.in);
     public static boolean gameBeaten = false;
     public static Player something = new Player();
-    public int TurnsCompleted = 0;
+    public static int TurnsCompleted = 0;
+
+    public static int StatPoints = 0;
 
     public static void input() {
 
@@ -124,16 +126,35 @@ public class Main {
 
     public static void Action(Enemy enemy) {
         int choice = 0;
+        int choiceOUTCOME = (int) (Math.random() * 10) + 1;
+
+
         do {
             System.out.println("1. Search" + "\n" +
                     "2.  Rest" + "\n");
+
+            System.out.println("PreDetermined Random Number Outcome:" + choiceOUTCOME);
 
             choice = Input.nextInt();
 
             switch (choice) {
                 case 1:
-                    System.out.println("Option 1 was chosen");
-                    something.Battle(something, enemy);
+                    System.out.println("You decided to search and.....\n");
+
+                    if (choiceOUTCOME <= 3) {
+                        enemy.RandomizeStats();
+
+                        something.Battle(something, enemy);
+
+                        System.out.print(enemy.toString());
+
+
+                        System.out.println(something.toString());
+                    } else if (choiceOUTCOME >= 4) {
+                        System.out.println("\n nothing happen \n");
+                    }
+
+
                     break;
                 case 2:
                     System.out.println("Option 2 was chosen");
@@ -144,6 +165,9 @@ public class Main {
             }
         }
         while (!(choice == 1 || choice == 2));
+        {
+
+        }
 
 
     }
@@ -152,20 +176,21 @@ public class Main {
         input();
 
         while (something.playerHp > 0) {
-            enemy.RandomizeStats();
+
 
             Action(enemy);
 
 
 //            something.Battle(something, enemy);
 
-            System.out.print(enemy.toString());
-
-
-            System.out.println(something.toString());
-
-
+            TurnsCompleted++;
         }
+
+
+        if (something.playerHp < 0) {
+            System.out.println("\n\n" + "Game Over" + "\n\n" + "Turns Completed: " + TurnsCompleted);
+        }
+
 
         // Player Bob = new Player("GIGABOB",  25,25,100);
 
